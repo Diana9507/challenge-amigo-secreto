@@ -10,8 +10,10 @@ let amigos = [];
     function agregarAmigo(){
         let amigoSecreto = document.getElementById('amigo').value;
         document.getElementById('añadir');
+        
         console.log(amigoSecreto);
-        console.log(amigos)
+        console.log(amigos);
+        //console.log(amigoSecreto[0]);
 
         if(amigoSecreto == 'ana'){
             alert('acertaste');
@@ -24,4 +26,5 @@ let amigos = [];
             }
         }
 }
+
 
