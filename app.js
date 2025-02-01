@@ -13,18 +13,26 @@ let amigos = [];
         
         console.log(amigoSecreto);
         console.log(amigos);
-        //console.log(amigoSecreto[0]);
-
-        if(amigoSecreto == 'ana'){
-            alert('acertaste');
+      
+        if(amigoSecreto == 0){
+            alert('ingresa un nombre');
         }else{
-            if(amigos.includes(amigoSecreto)){
-                return agregarAmigo();
-            }else{
-                amigos.push(amigoSecreto);
-                return amigoSecreto;
-            }
+            amigos.push(amigoSecreto);
         }
+        
 }
 
+// for(let i = 0; agregarAmigo.length; i++){
+ //  console.log(agregarAmigo[i]);
+// }
 
+// if(amigoSecreto == 'ana'){
+   // alert('acertaste');
+// }else{
+   // if(amigos.includes(amigoSecreto)){
+     //   return agregarAmigo();
+    //}else{
+       // amigos.push(amigoSecreto);
+       // return amigoSecreto;
+    //}
+//}
