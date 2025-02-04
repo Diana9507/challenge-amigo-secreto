@@ -2,47 +2,41 @@
 let amigos = [];
 
 
+
      function asignarTextoElemento (elemento,texto){
         let elementoHTML = document.querySelector(elemento);
         elementoHTML.innerHTML = texto;
 }
 
-    function agregarAmigo(){
+   function agregarAmigo(){
         let amigoSecreto = document.getElementById('amigo').value;
         document.getElementById('añadir');
         
         console.log(amigoSecreto);
         console.log(amigos);
-      
+    
         if(amigoSecreto == 0){
             alert('ingresa un nombre');
         }else{
-            amigos.push(amigoSecreto);
-            limpiarCaja();
-            asignarTextoElemento('ul',amigoSecreto);
-        }     
-}
+                amigos.push(amigoSecreto);
+                limpiarCaja();
+                recorrerAmigos();
+            }  
+            
+    }    
 
-function limpiarCaja(){
+   function limpiarCaja(){
     document.querySelector('#amigo').value='';
+} 
+    
+    function recorrerAmigos(){
+       //let listadoDeAmigos = document.querySelector('.name-list');
+
+        for(let i = 0;i<amigos.length; i++){
+            let listado = document.createElement('li');
+             listado.textContent = amigos[i];
+            let elementoNombreLista = document.querySelector('.name-list');
+            elementoNombreLista.append(listado);
+
     }
-
-    for(let i = 0; amigos.length; i++){
-        console.log(amigos[i]);
-    }
-
-
-// for(let i = 0; agregarAmigo.length; i++){
- //  console.log(agregarAmigo[i]);
-// }
-
-// if(amigoSecreto == 'ana'){
-   // alert('acertaste');
-// }else{
-   // if(amigos.includes(amigoSecreto)){
-     //   return agregarAmigo();
-    //}else{
-       // amigos.push(amigoSecreto);
-       // return amigoSecreto;
-    //}
-//}
+}
