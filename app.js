@@ -2,7 +2,6 @@
 let amigos = [];
 
 
-
      function asignarTextoElemento (elemento,texto){
         let elementoHTML = document.querySelector(elemento);
         elementoHTML.innerHTML = texto;
@@ -17,26 +16,37 @@ let amigos = [];
     
         if(amigoSecreto == 0){
             alert('ingresa un nombre');
+        }else{if(amigos.includes(amigoSecreto)){
+            alert('ingresar otro nombre');
+            recorrerAmigos();
+            amigos.length=0;
         }else{
                 amigos.push(amigoSecreto);
                 limpiarCaja();
-                recorrerAmigos();
+                
+                               // eliminarDuplicados();
+        }
+                
             }  
             
     }    
 
    function limpiarCaja(){
     document.querySelector('#amigo').value='';
-} 
+    } 
     
-    function recorrerAmigos(){
-       //let listadoDeAmigos = document.querySelector('.name-list');
+   function recorrerAmigos(){
 
         for(let i = 0;i<amigos.length; i++){
-            let listado = document.createElement('li');
-             listado.textContent = amigos[i];
-            let elementoNombreLista = document.querySelector('.name-list');
-            elementoNombreLista.append(listado);
 
+                let listado = document.createElement('li');
+                listado.textContent = amigos[i];
+                let elementoNombreLista = document.querySelector('.name-list');
+                elementoNombreLista.append(listado);
     }
 }
+
+       /* function eliminarDuplicados(){
+        let borrarDuplicados=[...new Set(amigos)];
+
+        }*/
